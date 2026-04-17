@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — OloladeSec</title>
+  <meta name="description" content="Learn about Ololade Suberu's cybersecurity expertise, mission, certifications, and professional background.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: rgba(17, 24, 39, 0.8);
+  --bg-card-hover: rgba(17, 24, 39, 0.95);
+  --accent-cyan: #00e5ff;
+  --accent-green: #00ff88;
+  --accent-purple: #a855f7;
+  --accent-orange: #f97316;
+  --accent-red: #ef4444;
+  --accent-yellow: #facc15;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-subtle: rgba(148, 163, 184, 0.1);
+  --border-glow: rgba(0, 229, 255, 0.2);
+  --glass: rgba(15, 23, 42, 0.75);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; min-height: 100vh; }
+a { color: var(--accent-cyan); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--accent-green); }
+.bg-grid { position: fixed; inset: 0; background-image: linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+.scanline { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,229,255,0.008) 2px, rgba(0,229,255,0.008) 4px); pointer-events: none; z-index: 0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle); transition: var(--transition); }
+.navbar.scrolled { background: rgba(10, 14, 23, 0.95); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4); }
+.nav-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 800; letter-spacing: 2px; color: var(--text-primary); }
+.logo-icon { font-size: 1.5rem; }
+.nav-links { display: flex; list-style: none; gap: 2rem; }
+.nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; padding: 0.5rem 0; position: relative; transition: var(--transition); }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent-cyan); transition: var(--transition); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent-cyan); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--text-primary); transition: var(--transition); border-radius: 2px; }
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.about-hero { position: relative; z-index: 1; text-align: center; padding: 8rem 1.5rem 3rem; }
+.about-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 1.5rem 0 1rem; }
+.about-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0, 255, 136, 0.08); border: 1px solid rgba(0, 255, 136, 0.25); padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; color: var(--accent-green); font-family: var(--font-mono); }
+.pulse-dot { width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); } 50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(0, 255, 136, 0); } }
+.gradient-text { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.section { position: relative; z-index: 1; padding: 2rem 1.5rem 5rem; }
+.about-content { max-width: 800px; margin: 0 auto; }
+.about-block { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; transition: var(--transition); }
+.about-block:hover { border-color: var(--border-glow); }
+.about-block h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+.about-block p { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.8; }
+.about-block p:last-child { margin-bottom: 0; }
+.about-block ul { list-style: none; padding: 0; }
+.about-block ul li { color: var(--text-muted); padding: 0.4rem 0 0.4rem 1.5rem; position: relative; line-height: 1.7; }
+.about-block ul li::before { content: '›'; position: absolute; left: 0; color: var(--accent-cyan); font-weight: 700; }
+.highlight { color: var(--accent-cyan); font-weight: 600; }
+.highlight-green { color: var(--accent-green); font-weight: 600; }
+.cert-card { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.4rem; margin-bottom: 1rem; transition: var(--transition); }
+.cert-card:last-child { margin-bottom: 0; }
+.cert-card:hover { border-color: var(--border-glow); background: rgba(0, 0, 0, 0.35); }
+.cert-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.6rem; }
+.cert-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+.cert-date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-cyan); background: rgba(0, 229, 255, 0.08); padding: 0.2rem 0.7rem; border-radius: 50px; white-space: nowrap; }
+.cert-issuer { font-size: 0.88rem; color: var(--accent-green); font-weight: 500; margin-bottom: 0.5rem; }
+.cert-skills { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+.cert-link { display: inline-block; margin-top: 0.6rem; font-size: 0.82rem; color: var(--accent-cyan); font-family: var(--font-mono); }
+.cert-link:hover { color: var(--accent-green); }
+.edu-card { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.4rem; margin-bottom: 1rem; transition: var(--transition); }
+.edu-card:hover { border-color: var(--border-glow); }
+.edu-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+.edu-card .edu-school { font-size: 0.9rem; color: var(--accent-green); margin-bottom: 0.3rem; }
+.edu-card .edu-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+.edu-card ul { list-style: none; padding: 0; }
+.edu-card ul li { font-size: 0.88rem; color: var(--text-muted); padding: 0.25rem 0 0.25rem 1.2rem; position: relative; }
+.edu-card ul li::before { content: '▹'; position: absolute; left: 0; color: var(--accent-cyan); }
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.mini-stat { text-align: center; padding: 1rem; background: rgba(0, 0, 0, 0.2); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); }
+.mini-stat .num { font-size: 1.5rem; font-weight: 800; font-family: var(--font-mono); color: var(--accent-cyan); }
+.mini-stat .lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.2rem; }
+.philosophy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.philosophy-item { padding: 1.2rem; background: rgba(0, 0, 0, 0.2); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); transition: var(--transition); }
+.philosophy-item:hover { border-color: var(--border-glow); }
+.philosophy-item .phi-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.philosophy-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+.philosophy-item p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.95rem; border: none; cursor: pointer; transition: var(--transition); font-family: var(--font-body); text-decoration: none; }
+.btn-primary { background: linear-gradient(135deg, var(--accent-cyan), #00b4d8); color: var(--bg-primary); box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
+.btn-primary:hover { box-shadow: 0 0 35px rgba(0, 229, 255, 0.4); transform: translateY(-2px); color: var(--bg-primary); }
+.btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-glow); }
+.btn-outline:hover { border-color: var(--accent-cyan); background: rgba(0, 229, 255, 0.05); color: var(--accent-cyan); }
+.cta-section { position: relative; z-index: 1; text-align: center; padding: 3rem 1.5rem 5rem; }
+.cta-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+.cta-section p { color: var(--text-muted); margin-bottom: 2rem; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.footer { position: relative; z-index: 1; border-top: 1px solid var(--border-subtle); padding: 3rem 1.5rem; text-align: center; }
+.footer-content { max-width: 1100px; margin: 0 auto; }
+.footer-logo { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 1rem; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+.footer-links a { color: var(--text-muted); font-size: 0.9rem; }
+.footer-links a:hover { color: var(--accent-cyan); }
+.footer-copy { color: var(--text-muted); font-size: 0.8rem; opacity: 0.7; }
+.fade-in { opacity: 0; transform: translateY(25px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 768px) {
+  .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: rgba(10, 14, 23, 0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: center; padding: 2rem 0; gap: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: flex; }
+  .about-hero { padding-top: 6rem; }
+  .stat-row { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .mini-stat .num { font-size: 1.2rem; }
+  .philosophy-grid { grid-template-columns: 1fr; }
+  .cert-header { flex-direction: column; }
+}
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scanline"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🛡️</span>
+        <span>OLOLADE<span style="color: var(--accent-green);">SEC</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+      <div class="nav-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+    <div class="hero-badge"><span class="pulse-dot"></span> About OloladeSec</div>
+    <h1>The Mind Behind <span class="gradient-text">the Shield</span></h1>
+    <p>Aspiring cybersecurity professional on a mission to make the internet safer, more trustworthy, and accessible for everyone.</p>
+  </section>
+
+  <section class="section">
+    <div class="about-content">
+
+      <!-- Bio -->
+      <div class="about-block fade-in">
+        <h2>👤 Who I Am</h2>
+        <p><span class="highlight">Ololade Olaoluwa Suberu</span> — cybersecurity student, tech enthusiast, and aspiring security professional. Born on March 17, 2007, I've been fascinated by technology for as long as I can remember. That curiosity evolved into a clear purpose: to protect people in the digital world.</p>
+        <p>I'm currently pursuing my studies in <span class="highlight">Information Technology and Cybersecurity</span> at <span class="highlight-green">Moreno Valley College</span> in California, with an expected graduation of <span class="highlight">Spring 2027</span>. From there, I plan to transfer to <span class="highlight-green">California State University, San Bernardino</span> to earn my Bachelor's degree — and ultimately my Master's — deepening my expertise in IT security and infrastructure.</p>
+        <p>My goal isn't just to build a career — it's to build a <span class="highlight">safer internet</span>. I want to eliminate the fear and risk that prevent people from trusting and fully utilizing the digital world. Whether through hands-on security work, building tools, or educating others, I'm committed to making cybersecurity accessible and actionable for everyone.</p>
+        <div class="stat-row">
+          <div class="mini-stat">
+            <div class="num">3</div>
+            <div class="lbl">Certifications</div>
+          </div>
+          <div class="mini-stat">
+            <div class="num">2027</div>
+            <div class="lbl">Expected Grad</div>
+          </div>
+          <div class="mini-stat">
+            <div class="num">4.48</div>
+            <div class="lbl">HS GPA / 5.0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission -->
+      <div class="about-block fade-in">
+        <h2>🎯 Mission</h2>
+        <p>OloladeSec exists to make cybersecurity <span class="highlight">accessible, practical, and proactive</span>. In a world where digital threats evolve daily, the mission is clear: equip individuals and organizations with the tools, knowledge, and strategies they need to stay protected.</p>
+        <p>Every tool built, every analysis shared, and every piece of knowledge created reflects a commitment to <span class="highlight-green">precision, transparency, and real-world impact</span>. Security isn't just about defense — it's about building trust in a digital-first world and empowering people to navigate the internet without fear.</p>
+      </div>
+
+      <!-- Certifications -->
+      <div class="about-block fade-in">
+        <h2>📜 Certifications</h2>
+
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-title">Security Principles</span>
+            <span class="cert-date">Jan 2026</span>
+          </div>
+          <div class="cert-issuer">ISC² — via Coursera</div>
+          <div class="cert-skills">Foundational cybersecurity principles, information assurance, risk management, security controls, governance, ISC² Code of Ethics</div>
+          <a href="https://coursera.org/verify/53PX1XCHTS4L" target="_blank" class="cert-link">🔗 Verify Credential →</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-title">Computer Hardware Basics</span>
+            <span class="cert-date">Jan 2026</span>
+          </div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+          <div class="cert-skills">Installing, repairing, and upgrading PC components; hardware diagnostics and preventive maintenance; laptop and mobile device architecture; fire and general safety standards</div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-title">Cybersecurity for Everyone</span>
+            <span class="cert-date">Dec 2024</span>
+          </div>
+          <div class="cert-issuer">University of Maryland, College Park — via Coursera</div>
+          <div class="cert-skills">Network security, threat modeling, cryptography fundamentals, vulnerability identification, system security principles</div>
+          <a href="https://coursera.org/share/e579f163e73d71fa8dfad2607cc125ea" target="_blank" class="cert-link">🔗 Verify Credential →</a>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="about-block fade-in">
+        <h2>🎓 Education</h2>
+
+        <div class="edu-card">
+          <h4>Associate's Degree — IT / Cybersecurity</h4>
+          <div class="edu-school">Moreno Valley College, California</div>
+          <div class="edu-date">Expected Graduation: Spring 2027</div>
+          <ul>
+            <li>Focused coursework in network security, systems administration, and cyber defense</li>
+            <li>Planning to transfer to Cal State San Bernardino for B.S. and M.S. in IT</li>
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h4>High School Diploma</h4>
+          <div class="edu-school">Hybrid Secondary School — Lagos, Nigeria</div>
+          <div class="edu-date">Graduated: October 2023</div>
+          <ul>
+            <li>Best Science Student — Class of 2023</li>
+            <li>Best Head Prefect — demonstrated leadership across campus</li>
+            <li>4.48 / 5.0 GPA — Top 10% of graduating class</li>
+            <li>Built leadership and mentoring skills through student coordination and peer support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Core Values / Philosophy -->
+      <div class="about-block fade-in">
+        <h2>🧭 Core Philosophy</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-item">
+            <div class="phi-icon">🔒</div>
+            <h4>Security First</h4>
+            <p>Every system, every tool, and every decision should prioritize the safety and privacy of users above all else.</p>
+          </div>
+          <div class="philosophy-item">
+            <div class="phi-icon">📖</div>
+            <h4>Educate & Empower</h4>
+            <p>Knowledge is the strongest defense. I believe in making cybersecurity understandable and accessible to everyone — not just experts.</p>
+          </div>
+          <div class="philosophy-item">
+            <div class="phi-icon">⚡</div>
+            <h4>Stay Proactive</h4>
+            <p>The best defense is built before an attack happens. Continuous learning, testing, and adapting keeps systems resilient.</p>
+          </div>
+          <div class="philosophy-item">
+            <div class="phi-icon">🌍</div>
+            <h4>Build Trust</h4>
+            <p>The internet should be a space where everyone feels safe to work, learn, and connect — without fear of exploitation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="about-block fade-in">
+        <h2>🛠️ Areas of Focus</h2>
+        <ul>
+          <li>Network Security & Infrastructure Defense</li>
+          <li>Threat Modeling & Vulnerability Assessment</li>
+          <li>Cryptography & Encryption Fundamentals</li>
+          <li>Risk Management & Security Governance</li>
+          <li>Hardware Diagnostics & System Administration</li>
+          <li>Penetration Testing & Ethical Hacking</li>
+          <li>Incident Response & Forensic Analysis</li>
+          <li>Identity & Access Management (IAM)</li>
+          <li>Security Awareness & User Education</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container fade-in">
+      <h2>Want to See Security in Action?</h2>
+      <p>Try the interactive tools I've built — password strength checker, secure generator, and more coming soon.</p>
+      <div class="hero-buttons">
+        <a href="tools.html" class="btn btn-primary">🔧 Explore Tools</a>
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">OLOLADE<span style="color: var(--accent-green);">SEC</span></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 OloladeSec. Built with precision. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+const navToggle=document.querySelector('.nav-toggle'),navLinks=document.querySelector('.nav-links');
+if(navToggle){navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active');navLinks.classList.toggle('open')});document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{navToggle.classList.remove('active');navLinks.classList.remove('open')}))}
+const navbar=document.querySelector('.navbar');window.addEventListener('scroll',()=>{window.scrollY>50?navbar.classList.add('scrolled'):navbar.classList.remove('scrolled')});
+const fadeEls=document.querySelectorAll('.fade-in');const fadeObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});fadeEls.forEach(el=>fadeObs.observe(el));
+  </script>
+</body>
+</html>
